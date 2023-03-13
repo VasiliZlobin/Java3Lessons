@@ -8,7 +8,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Homework7 {
-    private static final int MIN_PRIORITY = 10;
+    static final int MIN_PRIORITY = 10;
+
     public static void start(Class classTest) throws InvocationTargetException, IllegalAccessException, InstantiationException {
         Method[] methods = classTest.getDeclaredMethods();
         List<Method> collectBefore = Arrays.stream(methods)
@@ -26,7 +27,7 @@ public class Homework7 {
         if (!collectBefore.isEmpty()) {
             collectBefore.get(0).invoke(classTest.getConstructors()[0].newInstance());
         }
-        runMethodsTest(methods,classTest);
+        runMethodsTest(methods, classTest);
         if (!collectAfter.isEmpty()) {
             collectAfter.get(0).invoke(classTest.getConstructors()[0].newInstance());
         }

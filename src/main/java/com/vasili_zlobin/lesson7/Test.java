@@ -8,5 +8,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface Test {
-    int priority() default 10;
+    int priority() default Homework7.MIN_PRIORITY;
 }
